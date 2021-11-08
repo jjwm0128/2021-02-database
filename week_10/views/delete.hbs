@@ -1,0 +1,61 @@
+<h1>{{ title }}</h1>
+
+<table>
+    <tr>
+        <!-- tr은 행 td는 열 -->
+        <td>Fname</td>
+        <td>Minit</td>
+        <td>Lname</td>
+        <td>Ssn</td>
+        <td>Bdate</td>
+        <td>Address</td>
+        <td>Sex</td>
+        <td>Salary</td>
+        <td>Super_ssn</td>
+        <td>Dno</td>
+    </tr>
+    {{#each employee}}
+    <!-- each는 반복문 데이터가 있을때마다 테이블을 추가해서 employee를 반복  /each까지 -->
+    <form method="post">
+      <tr>
+        <td>{{Fname}}</td>
+        <td>{{Minit}}</td>
+        <td>{{Lname}}</td>
+        <td>{{Ssn}}</td>
+        <td>{{Bdate}}</td>
+        <td>{{Address}}</td>
+        <td>{{Sex}}</td>
+        <td>{{Salary}}</td>
+        <td>{{Super_ssn}}</td>
+        <td>{{Dno}}</td>
+        <td style="border: none; margin-left: 10px;">
+          <button style="margin-left: 10px;" type="submit" name="delBtn1" value={{Ssn}} formaction="/delete">
+            삭제
+          </button>
+      </tr>
+    </form>
+    {{/each}}
+</table>
+
+<h1>{{ title2 }}</h1>
+
+<table>
+  <tr>
+    <td>Dname</td>
+    <td>Dnumber</td>
+  </tr>
+  {{#each department}}
+    <form method="post">
+      <tr>
+        <td>{{Dname}}</td>
+        <td>{{Dnumber}}</td>
+        <td style="border: none; margin-left: 10px;">
+          <button 
+            style="margin-left: 10px;" type="submit"  name="delBtn2" value={{Dnumber}}  formaction="/delete">
+          삭제
+          </button>
+        </td>
+      </tr>    
+    </form>
+  {{/each}}
+</table>
